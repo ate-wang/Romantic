@@ -1,0 +1,169 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>w伟 ❤ sz月🌙</title>
+    <script type="text/javascript" src="js/balloon.js"></script>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+           
+        }
+
+        div {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        audio {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+
+    </style>
+
+ <link rel="stylesheet" type="text/css" href="css/index.css">	 
+</head>
+<body>
+
+<div id="jsi-snow-container" class="container">
+    <canvas id="canvas"></canvas>
+</div>
+
+<div class="left">
+		<div class="nav-main">
+	
+	<div class="nav">
+  <ul class="nav-ul">
+  	<li><a href="小屁.html" class="home"><span>记得暂停音乐</span></a></li>
+  	<li><a href="#" class="develop"><span>页面选择</span></a></li>
+  	<li><a href="#" class="wechat"><span>最美记忆</span></a></li>
+  	<li><a href="#" class="case"><span>青春年华</span></a></li>
+  	<li><a href="./html/jiqiren.html" target="_blank" class="news"><span>小屁聊天</span></a></li>
+  	<li><a href="./html/demo.html" target="_blank" class="contact"><span>留言评论</span></a></li>
+  </ul>
+
+</div>
+	<div class="nav-slide">
+    <div class="nav-slide-o"></div>
+    <div class="nav-slide-o">
+    	<ul>
+    		<li><a href="./html/shouye.html" target="_blank"><span>进入页面</span></a></li>
+    		<li><a href="./html/daojis.html" target="_blank"><span>计时页面</span></a></li>
+    		<li><a href="./html/ali.html" target="_blank"><span>阿狸页面</span></a></li>
+	                <li><a href="./html/yanhua.html" target="_blank"><span>狗粮页面</span></a></li>
+    		
+
+    	</ul>
+    </div>
+    <div class="nav-slide-o">
+    	<ul>
+    		<li><a  href="./html/xiangc.html" target="_blank"><span>时光相册</span></a></li>
+    		<li><a href="./html/sp.html" target="_blank"><span>视频回忆</span></a></li>
+    		
+    		<li><a href="./html/jinianri.html" target="_blank"><span>纪念日</span></a></li>
+    	</ul>
+    </div>
+    <div class="nav-slide-o">
+    	<ul>
+    		<li><a href="./html/qiang.html" target="_blank"><span>小屁</span></a></li>
+    		<li><a href="./html/haha.html" target="_blank"><span>小猪</span></a></li>
+    		
+    	</ul>
+    </div>
+
+	
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+	<div>$(function(){
+	var thisTime;
+	$('.nav-ul li').mouseleave(function(even){
+			thisTime	=	setTimeout(thisMouseOut,1000);
+
+	})
+
+	
+	</script>
+</div>
+
+	
+
+		
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	var thisTime;
+	$('.nav-ul li').mouseleave(function(even){
+			thisTime	=	setTimeout(thisMouseOut,1000);
+
+	})
+
+	$('.nav-ul li').mouseenter(function(){
+		clearTimeout(thisTime);
+		var thisUB	=	$('.nav-ul li').index($(this));
+		if($.trim($('.nav-slide-o').eq(thisUB).html()) != "")
+		{
+			$('.nav-slide').addClass('hover');
+			$('.nav-slide-o').hide();
+			$('.nav-slide-o').eq(thisUB).show();
+		}
+		else{
+			$('.nav-slide').removeClass('hover');
+		}
+		
+	})
+	
+	function thisMouseOut(){
+		$('.nav-slide').removeClass('hover');
+	}
+	 
+	$('.nav-slide').mouseenter(function(){
+		clearTimeout(thisTime);
+		$('.nav-slide').addClass('hover');
+	})
+	$('.nav-slide').mouseleave(function(){
+		$('.nav-slide').removeClass('hover');
+	})
+
+	})
+
+
+		</script>
+
+
+
+<script src="js/main.js"></script>
+
+
+<audio id="audio" src="mp3/dingdang.mp3" autoplay="autoplay" controls></audio>
+
+<script>
+
+    // 创建气球对象，并添加到body中
+    for (var i = 0; i < 36; i++) {
+        var balloon = new Balloon();
+        balloon.show();
+        balloon.run();
+    }
+
+    // 头像
+    var count = 0;
+    var timer = setInterval(function () {
+        var balloon = new Balloon(picArray[count % picArray.length]);
+        balloon.show();
+        balloon.run();
+        count++;
+        console.log("count = " + count);
+        if (count == 8) {
+            clearInterval(timer);
+        }
+    }, 900);
+
+
+</script>
+</body>
+</html>

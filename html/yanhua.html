@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/reset.css">
+  <script type="text/javascript" src="../js/jquery1.min1.js"></script>
+  <script type="text/javascript" src="../layer/mobile/layer.js"></script>
+  <script type="text/javascript" src="../js/fireworks.js"></script>
+  <link rel="stylesheet" href="../css/index12.css">
+  <title>Love You</title>
+</head>
+<body>
+  <div class="firework"></div>
+  <div class="wrap">
+    <div class="main">
+      <h2>小屁小姐姐，我喜欢你很久很久了</h2>
+      <img class="img1" src="../img/img1.png" alt="">
+      <h1>谈恋爱好不好</h1>
+      <div class="btn">
+        <button class="btn1">好</button>
+        <button class="btn2">不好</button>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(function () {
+      var noIndex=0
+      var noText=['不吵架，不顶嘴','会撒娇，会卖萌','可高冷，可温柔','这都还不同意吗','考虑考虑呀','再考虑考虑嘛','你确定不再考虑一下？','再不同意给你关机了呦','倒计时开始','3','2','1','关机！']
+      $('.btn2').click(function () {
+        open()
+      })
+      $('.btn1').click(function () {
+        close()
+      })
+      function open(){
+        layer.open({
+          shadeClose:false,
+          content: noText[noIndex],
+          btn: ['好', '不好'],
+          no: function(index, layero){
+            layer.close(index)
+            noIndex++
+            if (noIndex>=noText.length){
+              noIndex=0
+            }else {
+              open()
+            }
+          },
+          yes:function (index) {
+            layer.close(index)
+            close()
+          }
+        })
+      }
+      function close(){
+        layer.open({
+          shadeClose:false,
+          content: '想好了吗？答应了吗？',
+          btn: '好',
+          yes:function (index) {
+            layer.close(index)
+            layer.open({
+              shadeClose:false,
+              content:'爱你呦,么么,送你一场浪漫的烟火',
+              btn: '好',
+              yes:function (index) {
+                layer.close(index)
+                initFirework()
+              }
+            })
+          }
+        })
+      }
+    })
+  </script>
+</body>
+</html>
